@@ -1,6 +1,7 @@
 .Home {
     text-align: center;
     font-size: 18px;
+    color: rgb(15, 34, 96);
   }
   
   .pokegallery{
@@ -16,7 +17,7 @@
     margin: 10px;
     background-color: #f4db6d;
     border-radius: 5px;
-  box-shadow: 6px 10px 5px 0px rgba(199,197,199,0.75);
+  box-shadow: 6px 10px 5px 0px rgba(61, 145, 215, 0.75);
   height: 15rem;
   width: 10rem;
   }

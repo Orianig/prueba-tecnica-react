@@ -11,30 +11,41 @@ function Home() {
   const [load, setLoad] = useState("true");
 
   const pokemon = [];
+  //PARA TRAER LOS POKEMONS
+
+  //me los esta trayendo duplicados
 
   useEffect(() => {
     //utilizo un fetch para la llamada
     fetch("https://pokeapi.co/api/v2/pokemon/?limit=12") // lamada a la API, el resultado es una promesa
       .then((response) => response.json()) //transformamos la respuesta a JSON (response.json() también como promesa
-      .then((data) => //respuesta en formato objeto
-        setResult(
-          data.results.map((item) => {
-            fetch(item.url)
-              .then((response) => response.json())
-              .then((allpokemon) => pokemon.push(allpokemon));
-            setPoke(pokemon);
-          })
-        )
+      .then(
+        (
+          data //respuesta en formato objeto
+        ) =>
+          //se guarda la informacion obtenida
+          setResult(
+            data.results.map((item) => {
+              fetch(item.url)
+                .then((response) => response.json())
+                .then((allpokemon) => pokemon.push(allpokemon));
+              //se guarda el array -array con todos los pokemones y su información
+              setPoke(pokemon);
+            })
+          )
       );
   }, []);
 
   setTimeout(() => {
     setLoad(false);
-    console.log(poke);
   }, 1000);
 
+// PARA LA BUSQUEDA DE LOS POKEMONS
   return (
     <div className="Home">
+      <div>
+        <h1>HOLA SOY EL BUSCADOR</h1>
+      </div>
       <div className="pokegallery">
         {load ? (
           <p>Loading...</p>

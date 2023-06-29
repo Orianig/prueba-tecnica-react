@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 // const root = "https://pokeapi.co/api/v2/pokemon/"
 
@@ -7,7 +7,7 @@
 //     return await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
 // };
 
-// export const searchCharacter = async (criteria) => {
+export const searchCharacter = async (criteria) => {
 
-//     return await axios.get(`https://pokeapi.co/api/v2/pokemon/${criteria}`);
-// }
+    return await axios.get(`https://pokeapi.co/api/v2/pokemon/${criteria}`);
+}
